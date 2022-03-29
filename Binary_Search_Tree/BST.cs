@@ -18,26 +18,26 @@ namespace Binary_Search_Tree
         {
             if (Parent.Left == null)
             {
-                Console.WriteLine("Inserting to the left of root");
+                Console.WriteLine("Inserting {0} to the left of root {1}", node.Key, Parent.Key);
                 Parent.Left = node;
                 node.Root = Parent;
             }
             else
             {
-                Console.WriteLine("Inserting to the right of root");
+                Console.WriteLine("Inserting {0} to the right of root {1}", node.Key, Parent.Key);
                 Parent.Right = node;
                 node.Root = Parent;
             }
         }
         public void Insert_Left(Binary_Node Parent, Binary_Node node)
         {
-            Console.WriteLine("Inserting to the left of root");
+            Console.WriteLine("Inserting {0} to the left of root {1}", node.Key, Parent.Key);
             Parent.Left = node;
             node.Root = Root;
         }
         public void Insert_Right(Binary_Node Parent, Binary_Node node)
         {
-            Console.WriteLine("Inserting to the right of root");
+            Console.WriteLine("Inserting {0} to the right of root {1}", node.Key, Parent.Key);
             Parent.Right = node;
             node.Root = Parent;
         }
