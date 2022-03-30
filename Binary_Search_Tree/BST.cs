@@ -14,9 +14,13 @@ namespace Binary_Search_Tree
         public BST(T Key)
         {
             this.Head = new Binary_Node<T>(Key);
-            temp = Head;
         }
         public void Insert(T Data)
+        {
+            temp = Head;
+            Insert_R(Data);
+        }
+        public void Insert_R(T Data)
         {
             if (temp.Value.CompareTo(Data) > 0 && temp.Left == null)
             {
@@ -26,7 +30,7 @@ namespace Binary_Search_Tree
             else if (temp.Value.CompareTo(Data) > 0 && temp.Left != null)
             {
                 temp = temp.Left;
-                Insert(Data);
+                Insert_R(Data);
             }  
             else if (temp.Value.CompareTo(Data) < 0 && temp.Right == null)
             {
@@ -36,7 +40,7 @@ namespace Binary_Search_Tree
             else if (temp.Value.CompareTo(Data) < 0 && temp.Right != null)
             {
                 temp = temp.Right;
-                Insert(Data);
+                Insert_R(Data);
             }     
         }
         public void Display_Inorder()
@@ -76,9 +80,9 @@ namespace Binary_Search_Tree
         public void Display_Postorder(Binary_Node<T> node)
         {
             if (node.Left != null)
-                Display_Preorder(node.Left);
+                Display_Postorder(node.Left);
             if (node.Right != null)
-                Display_Preorder(node.Right);
+                Display_Postorder(node.Right);
             Console.WriteLine(node.Value);
         }
     }
