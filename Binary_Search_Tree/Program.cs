@@ -36,6 +36,8 @@ namespace Binary_Search_Tree
             Tree.Insert_Right(node_nine, node_eleven);              //65
             Tree.Insert_Left(node_eleven, node_twelve);             //63
             Tree.Insert_Right(node_eleven, node_thirteen);          //67
+
+            Console.WriteLine(Tree.Search_Inorder(40));
         }
     }
 }
