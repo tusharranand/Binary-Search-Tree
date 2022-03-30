@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace Binary_Search_Tree
 {
-    public class Binary_Node
+    public class Binary_Node<T> where T : IComparable
     {
-        public int Key;
-        public Binary_Node Left, Right, Root;
+        public T Value;
+        public Binary_Node<T> Left, Right;
 
-        public Binary_Node(int item)
+        public Binary_Node(T item)
         {
-            Key = item;
+            Value = item;
             Left = null;
             Right = null;
-            Root = null;
         }
     }
 }
